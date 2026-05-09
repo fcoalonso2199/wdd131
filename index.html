@@ -1,11 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WDD 131 - Francisco </title>
+    <title>WDD 131 – Dynamic Web Fundamentals – Francisco Javier Alonso G.</title>
+    <meta name="description" content="WDD 131 – Dynamic Web Fundamentals - Francisco Javier Alonso G. This page serves as a hub for course assignments and project links, showcasing dynamic web fundamentals.">
+    <meta name="author" content="Francisco Javier Alonso G.">
+    
+    <!-- External CSS link would go here -->
+    <link rel="stylesheet" href="styles/base.css">
+    
+    <!-- External JS link for footer dynamic content -->
+    <script src="scripts/getdates.js" defer></script>
 </head>
 <body>
-    <h1>WDD 131 - Francisco</h1>
+
+    <header>
+        <h1>
+            <span id="course-title">WDD 131 – Dynamic Web Fundamentals</span>
+        </h1>
+        <nav>
+            <a href="https://www.linkedin.com/in/your-profile" target="_blank">LinkedIn</a>
+            <a href="https://byupw.instructure.com/" target="_blank">Canvas</a>
+            <a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/1-ne/3?lang=eng&id=p7#p7" target="_blank">Scripture</a>
+            <a href="project/index.html">Final Project</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Francisco Javier Alonso G.</h1>
+
+        <section class="card">
+            <h2>Course Resources</h2>
+            <!-- Ensure images are saved locally in an 'images' folder -->
+            <img src="images/placeholder-resource.webp" alt="Course resource icon" width="200" height="150">
+            <p>Exploring the core pillars of web development: HTML, CSS, and JavaScript.</p>
+        </section>
+
+        <section class="card">
+            <h2>Personal Progress</h2>
+            <img src="images/placeholder-progress.webp" alt="Progress chart" width="200" height="150">
+            <p>Building responsive and accessible web experiences for modern browsers.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            &copy;<span id="currentyear"></span> | Francisco Javier Alonso G. | Mexico
+        </p>
+        <p id="lastModified"></p>
+    </footer>
+
 </body>
 </html>
