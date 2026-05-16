@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temples Album - WDD 131</title>
+    <meta name="description" content="Página de visualización de templos para el curso WDD 131.">
+    <meta name="author" content="Francisco Javier Alonso Gonzalez">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles/temples.css">
+    <link rel="stylesheet" href="styles/temples-large.css" media="(min-width: 768px)">
+    
+    <script src="scripts/temples.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Temples Album</h1>
+        <button id="menu" title="Menu"></button>
+        <nav>
+            <ul class="navigation">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Old</a></li>
+                <li><a href="#">New</a></li>
+                <li><a href="#">Large</a></li>
+                <li><a href="#">Small</a></li>
+            </ul>
+        </nav>
+    </header>
+
+<main>
+        <h2>Home</h2>
+        <div class="grid-container">
+            <figure>
+                <img src="images/sandiegotemple.webp" alt="San Diego California Temple" loading="lazy">
+                <figcaption>San Diego California</figcaption>
+            </figure>
+
+            <figure>
+                <img src="images/mexicocitytemple.jpg" alt="Mexico City Temple" loading="lazy">
+                <figcaption>Ciudad de México, México</figcaption>
+            </figure>
+
+            <figure>
+                <img src="images/saltlakecitytemple.jpg" alt="Salt Lake City Temple" loading="lazy">
+                <figcaption>Salt Lake City, Utah</figcaption>
+            </figure>
+            
+            </div>
+    </main>
+
+  
+    <footer>
+        <p>&copy;<span id="currentyear"></span> | Francisco Javier Alonso G. | Mexico</p>
+        <p>Last Modification: <span id="lastModified"></span></p>
+    </footer>
+</body>
+</html>
