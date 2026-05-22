@@ -1,0 +1,143 @@
+:root {
+    --primary-color: #008080;   
+    --secondary-color: #f39c12; 
+    --text-color: #2c3e50;
+    --bg-color: #f4f9f9;
+    --card-bg: #ffffff;
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.card h2 {
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.card ul {
+    list-style: none;
+}
+
+.card li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.card li:last-child {
+    border-bottom: none;
+}
+
+.label {
+    font-weight: bold;
+}
+
+.weather-icon-mobile {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto;
+    font-size: 0.9rem;
+}
+
+.last-modified {
+    color: var(--secondary-color);
+    margin-top: 0.5rem;
+}
+
+
+@media (min-width: 800px) {
+    main {
+        display: grid;
+        grid-template-columns: 300px 1fr 300px;
+        grid-template-rows: auto;
+        align-items: start; 
+        padding: 2rem 1rem;
+    }
+
+    .hero-image {
+        grid-column: 1 / -1;
+        grid-row: 1;
+    }
+
+    .data-card {
+        grid-column: 1;
+        grid-row: 1;
+        margin-top: 4rem; 
+        z-index: 10;
+        align-self: start; 
+    }
+
+    .weather-card {
+        grid-column: 3;
+        grid-row: 1;
+        z-index: 10;
+        
+        align-self: end;    
+        margin-bottom: 4rem; 
+    }
+
+    .weather-icon-mobile {
+        display: none;
+    }
+
+    .weather-title::after {
+        content: " ⛅";
+        font-size: 1.5rem;
+    }
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place Information: CDMX, México</title>
+    <meta name="description" content="Web page showcasing information about CDMX, México, including data and weather details.">
+    <link rel="stylesheet" href="styles/places.css">
+    <script src="scripts/places.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <h1>CDMX, México</h1>
+    </header>
+
+    <main>
+        <picture class="hero-image">
+            <source media="(min-width: 800px)" srcset="https://images.pexels.com/photos/14170472/pexels-photo-14170472.jpeg" type="image/webp">
+            <img src="https://images.pexels.com/photos/14170472/pexels-photo-14170472.jpeg" alt="CDMX" width="100%" height="auto">
+        </picture>
+
+        <section class="card data-card">
+            <h2>Data</h2>
+            <ul>
+                <li><span class="label">Country:</span> <span class="value">México</span></li>
+                <li><span class="label">Population:</span> <span class="value">888,797</span></li>
+                <li><span class="label">Language:</span> <span class="value">Spanish</span></li>
+                <li><span class="label">Currency:</span> <span class="value">Mexican Peso (MXN)</span></li>
+                <li><span class="label">Climate:</span> <span class="value">Tropical</span></li>
+                <li><span class="label">Time Zone:</span> <span class="value">EST (UTC-5)</span></li>
+            </ul>
+        </section>
+
+        <section class="card weather-card">
+            <h2 class="weather-title">Weather</h2>
+            
+            <div class="weather-icon-mobile">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64" fill="none" stroke="#e67e22" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+                    <circle cx="12" cy="12" r="4"/>
+                </svg>
+            </div>
+
+            <ul>
+                <li><span class="label">Temperature:</span> <span class="value" id="temp">8</span>°C</li>
+                <li><span class="label">Condition:</span> <span class="value">Sunny</span></li>
+                <li><span class="label">Wind:</span> <span class="value" id="wind">15</span> km/h</li>
+                <li><span class="label">Thermal Sensation:</span> <span class="value" id="chill"></span></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="currentYear"></span> - Francisco Javier Alonso G. | CDMX, México</p>
+        <p class="last-modified">Last Modified: <span id="lastModified"></span></p>
+    </footer>
+
+</body>
+</html>
