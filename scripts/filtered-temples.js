@@ -74,6 +74,22 @@ const temples = [
     imageUrl:
     "https://churchofjesuschrist.org/imgs/5c22836ac5e36d099a131d686b0850eb22e1a0e8/full/500%2C/0/default"
   },
+  {
+    templeName: "Albuquerque New Mexico",
+    location: "Albuquerque, New Mexico",
+    dedicated: "2000, March, 5",
+    area: 116642,
+    imageUrl:
+    "https://www.churchofjesuschrist.org/imgs/d7744ff190d8fec7615a2f5b0d5e2b1813ba32d6/full/500%2C/0/default"
+  },
+  {
+    templeName: "Oaxaca Mexico",
+    location: "Oaxaca, Mexico",
+    dedicated: "2000, March, 11",
+    area: 116642,
+    imageUrl:
+    "https://www.churchofjesuschrist.org/imgs/f4d7feeaec4cb56a01fe624fad0ddddb26267d11/full/500%2C/0/default"
+  },
 ];
 
 const gridContainer = document.querySelector(".grid-container");
