@@ -66,7 +66,14 @@ const temples = [
     imageUrl:
     "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/mexico-city-mexico/400x250/mexico-city-temple-exterior-1518361-wallpaper.jpg"
   },
-  // Add more temple objects here...
+  {
+    templeName: "Monterrey Mexico",
+    location: "Monterrey, Mexico",
+    dedicated: "2002, April, 28",
+    area: 116642,
+    imageUrl:
+    "https://churchofjesuschrist.org/imgs/5c22836ac5e36d099a131d686b0850eb22e1a0e8/full/500%2C/0/default"
+  },
 ];
 
 const gridContainer = document.querySelector(".grid-container");
