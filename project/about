@@ -1,0 +1,46 @@
+Site Identification
+Site Name: Gym Experts
+
+Logo: (My friend hasn't provided me with a logo yet)
+
+Description: An intuitive platform designed for people looking to start at the gym or who already have experience. 
+I used the name because the routines will be provided by two gym experts, which also makes people more confident in the routines.
+
+Domain Availability (optional): gymexperts.online
+
+2. Site Purpose
+The website acts as a management hub for the user. It provides:
+- A searchable library of exercises categorized by muscle group.
+- An interactive tool to create and save personalized routines.
+- A progress tracking system using localStorage so that information persists between sessions.
+
+3. Scenarios (Target Audience)
+Beginner User: "What exercises can I do today to work my chest and triceps without needing specialized equipment?" (The site will respond by filtering exercises by muscle group and equipment.)
+Recurring user: "How was the weight or the reps I did in my last squat session?" (The site will display the browser's saved history.)
+
+4. Visual Design (Technical Suggestion)
+Color Scheme (Contrast Principles)
+For a gym website, we suggest a scheme that conveys energy and clarity:
+
+Primary Color (Headings/Buttons): #E63946 (Energetic Red or "Alabastor") - Use it for calls to action ("Save Routine" buttons).
+Secondary Color (Backgrounds/Details): #F1FAEE (Off-white) - Ideal for card backgrounds and reading areas.
+Accent Color (Text/Footer): #1D3557 (Deep Dark Blue) - Excellent for readability in the body text.
+
+Typography
+Titles: Montserrat (Sans-serif, modern and strong).
+Body text: Open Sans (Highly legible on mobile devices).
+
+5. Wireframe Guide (Structure)
+For your siteplan.html, you will need to draw (or create with simple shapes) these two views:
+
+Mobile View:
+Header: Logo + "Hamburger" Menu (vertical navigation).
+Hero Section: Motivational title + "Create Routine" button.
+Main: Vertically stacked exercise cards.
+Footer: Links + References.
+
+Desktop View:
+
+Header: Logo on the left, horizontal menu on the right.
+Main: 2 or 3 column layout for the exercise library (CSS Grid).
+Sidebar: Optional, for quick routine history.
