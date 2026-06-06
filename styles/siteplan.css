@@ -1,14 +1,11 @@
-/* Importing Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap');
 
-/* Color Variables */
 :root {
     --primary: #E63946;
     --secondary: #F1FAEE;
     --text: #1D3557;
 }
 
-/* Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -22,7 +19,6 @@ body {
     line-height: 1.6;
 }
 
-/* Header & Navigation */
 header {
     background-color: var(--text);
     color: white;
@@ -53,7 +49,6 @@ nav ul li a {
     font-weight: 600;
 }
 
-/* Main Section */
 .hero {
     text-align: center;
     padding: 60px 20px;
@@ -80,7 +75,6 @@ h1 {
     background-color: #d62839;
 }
 
-/* Responsive Footer */
 footer {
     text-align: center;
     padding: 20px;
@@ -88,7 +82,6 @@ footer {
     border-top: 1px solid #ccc;
 }
 
-/* Mobile View Adjustments */
 @media (max-width: 600px) {
     header {
         flex-direction: column;
