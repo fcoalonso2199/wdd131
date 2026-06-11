@@ -74,7 +74,18 @@ input[type="submit"]:hover {
     background-color: #310d5e;
 }
 
-/* Responsividad para móviles */
+footer {
+    background-color: var(--primary-color);
+    color: #eee;
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 4rem;
+}
+
+footer p {
+    margin: 0.5rem 0;
+}
+
 @media (max-width: 480px) {
     main { padding: 15px; }
 }
