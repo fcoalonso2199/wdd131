@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Francisco Javier Alonso Gonzalez">
+    <title>Reseña de Producto</title>
+    <link rel="stylesheet" href="css/form.css">
+</head>
+<body>
+    <main>
+        <h1>Reseña de Producto</h1>
+        <form action="review.html" method="get">
+            <label for="product">Nombre del Producto</label>
+            <select id="product" name="product" required>
+                <option value="" disabled selected>Seleccione un producto...</option>
+            </select>
+
+            <label>Calificación General</label>
+            <div class="rating">
+                <input type="radio" name="rating" id="r1" value="1" required><label for="r1">★</label>
+                <input type="radio" name="rating" id="r2" value="2"><label for="r2">★★</label>
+                <input type="radio" name="rating" id="r3" value="3"><label for="r3">★★★</label>
+                <input type="radio" name="rating" id="r4" value="4"><label for="r4">★★★★</label>
+                <input type="radio" name="rating" id="r5" value="5"><label for="r5">★★★★★</label>
+            </div>
+
+            <label for="installDate">Fecha de Instalación</label>
+            <input type="date" id="installDate" name="installDate" required>
+
+            <label>Características útiles (marque todas las que apliquen):</label>
+            <label><input type="checkbox" name="features" value="durability"> Durabilidad</label>
+            <label><input type="checkbox" name="features" value="ease"> Facilidad de uso</label>
+            <label><input type="checkbox" name="features" value="performance"> Rendimiento</label>
+            <label><input type="checkbox" name="features" value="design"> Diseño</label>
+
+            <label for="review">Reseña escrita (Opcional)</label>
+            <textarea id="review" name="review"></textarea>
+
+            <label for="username">Nombre de usuario (Opcional)</label>
+            <input type="text" id="username" name="username">
+
+            <input type="submit" value="Post Review">
+        </form>
+    </main>
+    <footer>&copy;2026 - Tu Nombre</footer>
+    <script src="js/form.js"></script>
+</body>
+</html>
