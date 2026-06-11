@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="author" content="Francisco Javier Alonso Gonzalez">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A simple product review form with a confirmation page.">
     <title>Product Review</title>
     <link rel="stylesheet" href="styles/form.css">
 </head>
@@ -18,21 +20,27 @@
             <label>General Rating</label>
             <div class="rating">
                 <input type="radio" name="rating" id="r1" value="1" required><label for="r1">★</label>
-                <input type="radio" name="rating" id="r2" value="2"><label for="r2">★★</label>
-                <input type="radio" name="rating" id="r3" value="3"><label for="r3">★★★</label>
-                <input type="radio" name="rating" id="r4" value="4"><label for="r4">★★★★</label>
-                <input type="radio" name="rating" id="r5" value="5"><label for="r5">★★★★★</label>
+                <input type="radio" name="rating" id="r2" value="2" required><label for="r2">★★</label>
+                <input type="radio" name="rating" id="r3" value="3" required><label for="r3">★★★</label>
+                <input type="radio" name="rating" id="r4" value="4" required><label for="r4">★★★★</label>
+                <input type="radio" name="rating" id="r5" value="5" required><label for="r5">★★★★★</label>
             </div>
 
             <label for="installDate">Installation Date</label>
             <input type="date" id="installDate" name="installDate" required>
 
             <label>Useful Features (check all that apply):</label>
-            <label><input type="checkbox" name="features" value="durability"> Durability</label>
-            <label><input type="checkbox" name="features" value="ease"> Ease of Use</label>
-            <label><input type="checkbox" name="features" value="performance"> Performance</label>
-            <label><input type="checkbox" name="features" value="design"> Design</label>
+            <input type="checkbox" name="features" id="durability" value="durability">
+            <label for="durability">Durability</label>
 
+            <input type="checkbox" name="features" id="ease" value="ease">
+            <label for="ease">Ease of Use</label>
+
+            <input type="checkbox" name="features" id="performance" value="performance">
+            <label for="performance">Performance</label>
+
+            <input type="checkbox" name="features" id="design" value="design">
+            <label for="design">Design</label>
             <label for="review">Written Review (Optional)</label>
             <textarea id="review" name="review"></textarea>
 
