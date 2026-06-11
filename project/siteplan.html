@@ -3,30 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gym Experts | Your Workout Partner</title>
+    <title>Site Plan | Gym Experts</title>
     <link rel="stylesheet" href="styles/siteplan.css">
 </head>
 <body>
 
     <header>
-        <div class="logo">Gym Experts</div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="exercises.html">Exercises</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+        <h1>Site Plan: Gym Experts</h1>
     </header>
 
     <main>
-        <section class="hero">
-            <h1>Expert-Led Training</h1>
-            <p>Your intuitive platform for effective and safe fitness routines.</p>
-            <button id="cta-btn">Create My Routine</button>
+        <section>
+            <h2>1. Site Identification</h2>
+            <p><strong>Site Name:</strong> Gym Experts</p>
+            <p><strong>Logo:</strong> (Pending - Not yet provided)</p>
+            <p><strong>Description:</strong> An intuitive platform designed for people looking to start at the gym or who already have experience. The name reflects that routines are curated by two gym experts, fostering user confidence.</p>
+            <p><strong>Domain Availability:</strong> gymexperts.online</p>
         </section>
 
-        <section id="content-placeholder" aria-label="Exercise library">
+        <section>
+            <h2>2. Site Purpose</h2>
+            <p>The website acts as a management hub for the user, providing:</p>
+            <ul>
+                <li>A searchable library of exercises categorized by muscle group.</li>
+                <li>An interactive tool to create and save personalized routines.</li>
+                <li>A progress tracking system using <code>localStorage</code> to ensure data persistence between sessions.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>3. Scenarios</h2>
+            <ul>
+                <li><strong>Beginner User:</strong> "What exercises can I do today to work my chest and triceps without needing specialized equipment?" (Site filters exercises by muscle group and equipment.)</li>
+                <li><strong>Recurring User:</strong> "How was the weight or the reps I did in my last squat session?" (Site displays saved history from the browser.)</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>4. Visual Design</h2>
+            <h3>Color Scheme</h3>
+            <ul>
+                <li><strong>Primary (#E63946):</strong> Energetic Red used for CTAs (e.g., "Save Routine" buttons).</li>
+                <li><strong>Secondary (#F1FAEE):</strong> Off-white for card backgrounds and reading areas.</li>
+                <li><strong>Accent (#1D3557):</strong> Deep Dark Blue for high readability in body text and footers.</li>
+            </ul>
+            <h3>Typography</h3>
+            <ul>
+                <li><strong>Titles:</strong> Montserrat (Modern and strong).</li>
+                <li><strong>Body:</strong> Open Sans (Highly legible).</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>5. Wireframe Guide</h2>
+            <h3>Mobile View</h3>
+            <ul>
+                <li>Header: Logo + Hamburger menu.</li>
+                <li>Hero: Motivational title + "Create Routine" button.</li>
+                <li>Main: Vertically stacked exercise cards.</li>
+                <li>Footer: Links + References.</li>
+            </ul>
+            <h3>Desktop View</h3>
+            <ul>
+                <li>Header: Logo (left), horizontal menu (right).</li>
+                <li>Main: 2 or 3-column layout for the exercise library (using CSS Grid).</li>
+                <li>Sidebar: Optional, for quick routine history.</li>
+            </ul>
         </section>
     </main>
 
@@ -34,6 +76,5 @@
         <p>&copy; 2026 Gym Experts | <a href="references.html">References</a></p>
     </footer>
 
-    <script src="script.js"></script>
 </body>
 </html>
