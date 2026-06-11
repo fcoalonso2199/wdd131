@@ -35,8 +35,6 @@ if (select) {
         select.appendChild(option);
     });
 }
-
-// Lógica de contador en review.html
 if (window.location.pathname.includes("review.html")) {
     let count = localStorage.getItem("reviewCount") || 0;
     count++;
