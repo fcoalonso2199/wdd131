@@ -32,7 +32,6 @@ label {
     font-weight: bold;
 }
 
-/* Mejora de campos de entrada */
 input[type="text"], 
 input[type="date"], 
 select, 
@@ -42,10 +41,9 @@ textarea {
     margin-top: 5px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    box-sizing: border-box; /* Importante para que el padding no rompa el ancho */
+    box-sizing: border-box; 
 }
 
-/* Diseño de estrellas */
 .rating {
     display: flex;
     flex-direction: row-reverse;
@@ -57,7 +55,6 @@ textarea {
 .rating label { font-size: 24px; cursor: pointer; color: #ccc; }
 .rating input:checked ~ label { color: #f39c12; }
 
-/* Botón */
 input[type="submit"] {
     width: 100%;
     background-color: var(--primary-color);
