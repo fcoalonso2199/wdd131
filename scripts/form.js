@@ -41,3 +41,16 @@ if (window.location.pathname.includes("review.html")) {
     localStorage.setItem("reviewCount", count);
     document.body.innerHTML += `<p>Número total de reseñas enviadas: ${count}</p>`;
 }
+
+// Lógica de contador
+if (window.location.pathname.includes("review.html")) {
+    let count = localStorage.getItem("reviewCount") || 0;
+    count++;
+    localStorage.setItem("reviewCount", count);
+    
+    // En lugar de document.body.innerHTML, buscamos nuestro div específico
+    const container = document.getElementById("counter-container");
+    if (container) {
+        container.innerHTML = `<p><strong>Número total de reseñas enviadas: ${count}</strong></p>`;
+    }
+}
