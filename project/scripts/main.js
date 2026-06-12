@@ -82,6 +82,117 @@ function clearRoutine() {
     localStorage.removeItem('userRoutine');
     location.reload(); // Recarga la página para mostrar que está vacío
 }
+// Función para mostrar ejercicios de la rutina en el tracker
+function displayTracker() {
+    const container = document.querySelector('#tracker-container');
+    const saved = JSON.parse(localStorage.getItem('userRoutine')) || [];
+
+    if (saved.length === 0) {
+        container.innerHTML = "<p>No tienes ejercicios en tu rutina. <a href='library.html'>Añade algunos primero</a>.</p>";
+        return;
+    }
+
+    container.innerHTML = saved.map((exercise, index) => `
+        <div class="tracker-card">
+            <h3>${exercise}</h3>
+            <form onsubmit="saveProgress(event, '${exercise}')">
+                <fieldset>
+                    <legend>Registrar Serie</legend>
+                    <label>Reps: <input type="number" id="reps-${index}" required min="1"></label>
+                    <label>Peso (kg): <input type="number" id="weight-${index}" required min="0"></label>
+                    <button type="submit">Guardar</button>
+                </fieldset>
+            </form>
+        </div>
+    `).join('');
+}
+
+// Función para guardar progreso (ramificación condicional + LocalStorage)
+function saveProgress(event, name) {
+    event.preventDefault(); // Evita recarga de página
+    
+    // Obtener valores del formulario
+    const reps = event.target.querySelector('input[type="number"]').value;
+    const weight = event.target.querySelector('input[type="number"]:last-of-type').value;
+
+    const progressEntry = { name, reps, weight, date: new Date().toLocaleDateString() };
+    
+    let history = JSON.parse(localStorage.getItem('workoutHistory')) || [];
+    history.push(progressEntry);
+    localStorage.setItem('workoutHistory', JSON.stringify(history));
+
+    alert(`¡Progreso registrado para ${name}!`);
+    displayHistory(); // Actualizar historial en pantalla
+}
+
+// Mostrar historial usando métodos de array (slice y reverse)
+function displayHistory() {
+    const historyList = document.querySelector('#history-list');
+    const history = JSON.parse(localStorage.getItem('workoutHistory')) || [];
+    
+    // Mostrar los últimos 5 entrenamientos
+    const lastEntries = history.slice(-5).reverse();
+    
+    historyList.innerHTML = lastEntries.map(entry => `
+        <p><strong>${entry.date}:</strong> ${entry.name} - ${entry.reps} reps @ ${entry.weight}kg</p>
+    `).join('');
+}
+// Función para mostrar ejercicios de la rutina en el tracker
+function displayTracker() {
+    const container = document.querySelector('#tracker-container');
+    const saved = JSON.parse(localStorage.getItem('userRoutine')) || [];
+
+    if (saved.length === 0) {
+        container.innerHTML = "<p>No tienes ejercicios en tu rutina. <a href='library.html'>Añade algunos primero</a>.</p>";
+        return;
+    }
+
+    container.innerHTML = saved.map((exercise, index) => `
+        <div class="tracker-card">
+            <h3>${exercise}</h3>
+            <form onsubmit="saveProgress(event, '${exercise}')">
+                <fieldset>
+                    <legend>Registrar Serie</legend>
+                    <label>Reps: <input type="number" id="reps-${index}" required min="1"></label>
+                    <label>Peso (kg): <input type="number" id="weight-${index}" required min="0"></label>
+                    <button type="submit">Guardar</button>
+                </fieldset>
+            </form>
+        </div>
+    `).join('');
+}
+
+// Función para guardar progreso (ramificación condicional + LocalStorage)
+function saveProgress(event, name) {
+    event.preventDefault(); // Evita recarga de página
+    
+    // Obtener valores del formulario
+    const reps = event.target.querySelector('input[type="number"]').value;
+    const weight = event.target.querySelector('input[type="number"]:last-of-type').value;
+
+    const progressEntry = { name, reps, weight, date: new Date().toLocaleDateString() };
+    
+    let history = JSON.parse(localStorage.getItem('workoutHistory')) || [];
+    history.push(progressEntry);
+    localStorage.setItem('workoutHistory', JSON.stringify(history));
+
+    alert(`¡Progreso registrado para ${name}!`);
+    displayHistory(); // Actualizar historial en pantalla
+}
+
+// Mostrar historial usando métodos de array (slice y reverse)
+function displayHistory() {
+    const historyList = document.querySelector('#history-list');
+    const history = JSON.parse(localStorage.getItem('workoutHistory')) || [];
+    
+    // Mostrar los últimos 5 entrenamientos
+    const lastEntries = history.slice(-5).reverse();
+    
+    historyList.innerHTML = lastEntries.map(entry => `
+        <p><strong>${entry.date}:</strong> ${entry.name} - ${entry.reps} reps @ ${entry.weight}kg</p>
+    `).join('');
+}
+
 // Cargar al iniciar
 renderExercises('todos');
 displayRoutine();
