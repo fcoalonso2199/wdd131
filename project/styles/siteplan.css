@@ -159,3 +159,54 @@ footer {
     background-color: #e63946;
     color: white;
 }
+
+/* Contenedor de las tarjetas de ejercicio en el Tracker */
+.tracker-card {
+    background: #fff;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    border-left: 5px solid #E63946; /* Toque de color lateral */
+}
+
+/* Mejora del Fieldset para que parezca una sección separada */
+fieldset {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 10px;
+    background: #fdfdfd;
+}
+
+legend {
+    font-weight: bold;
+    color: #1D3557;
+    padding: 0 10px;
+}
+
+/* Alineación de los inputs */
+.tracker-card form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+}
+
+.tracker-card label {
+    font-weight: 600;
+}
+
+.tracker-card input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 80px;
+}
+
+/* Estilo para el historial */
+#history-list {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+}
