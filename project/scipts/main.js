@@ -25,15 +25,14 @@ function renderExercises(filter = "todos") {
 
 // Función creativa: Selección con feedback visual (Almacenamiento Local)
 function selectExercise(name) {
+    // 1. Guardar en localStorage
     let saved = JSON.parse(localStorage.getItem('myRoutine')) || [];
-    
-    if (!saved.includes(name)) {
-        saved.push(name);
-        localStorage.setItem('myRoutine', JSON.stringify(saved));
-        alert(`¡${name} añadido a tu rutina!`);
-    } else {
-        alert("Ya está en tu rutina.");
-    }
+    saved.push(name);
+    localStorage.setItem('myRoutine', JSON.stringify(saved));
+
+    // 2. Efecto visual creativo (Modificación del DOM)
+    event.currentTarget.style.border = "3px solid #E63946";
+    event.currentTarget.style.backgroundColor = "#fff0f0";
 }
 
 // Inicializar al cargar
