@@ -28,7 +28,12 @@
             <h2>Biblioteca de Ejercicios</h2>
             <p>Selecciona un grupo muscular para ver los ejercicios recomendados.</p>
         </section>
-
+            <div class="filters">
+            <button onclick="renderExercises('todos')">Todos</button>
+            <button onclick="renderExercises('pecho')">Pecho</button>
+            <button onclick="renderExercises('pierna')">Pierna</button>
+            <button onclick="renderExercises('espalda')">Espalda</button>
+            </div>
         <section id="exercise-list" class="exercise-grid">
             </section>
     </main>
