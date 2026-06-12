@@ -220,6 +220,26 @@ function clearHistory() {
     }
 }
 
+function displayHistory() {
+    const historyList = document.querySelector('#history-list');
+    const history = JSON.parse(localStorage.getItem('workoutHistory')) || [];
+    
+    historyList.innerHTML = history.reverse().map((entry, index) => `
+        <div class="history-item">
+            <p>${entry.date}: ${entry.name} - ${entry.reps} reps @ ${entry.weight}kg</p>
+            <button onclick="deleteEntry(${index})">Eliminar registro</button>
+        </div>
+    `).join('');
+}
+
+// Función para borrar un registro específico del historial
+function deleteEntry(index) {
+    let history = JSON.parse(localStorage.getItem('workoutHistory')) || [];
+    history.splice(index, 1); // Elimina 1 elemento en la posición 'index'
+    localStorage.setItem('workoutHistory', JSON.stringify(history));
+    displayHistory();
+}
+
 // Cargar al iniciar
 renderExercises('todos');
 displayRoutine();
