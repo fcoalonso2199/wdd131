@@ -240,6 +240,21 @@ function deleteEntry(index) {
     displayHistory();
 }
 
+container.innerHTML = saved.map((exercise, index) => `
+    <div class="tracker-card">
+        <h3>${exercise}</h3>
+        <form onsubmit="saveProgress(event, '${exercise}')">
+            <fieldset>
+                <div class="form-group">
+                    <label>Reps: <input type="number" id="reps-${index}" required></label>
+                    <label>Peso (kg): <input type="number" id="weight-${index}" required></label>
+                </div>
+                <button type="submit">Guardar Registro</button>
+            </fieldset>
+        </form>
+    </div>
+`).join('');
+
 // Cargar al iniciar
 renderExercises('todos');
 displayRoutine();

@@ -210,3 +210,68 @@ legend {
     padding: 20px;
     border-radius: 12px;
 }
+
+/* Mejora el contenedor principal */
+#tracker-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Estilo mejorado para la tarjeta del tracker */
+.tracker-card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    border-left: 8px solid #E63946;
+}
+
+/* Mejora los inputs y etiquetas dentro del fieldset */
+fieldset {
+    border: none;
+    padding: 0;
+    margin: 15px 0 0 0;
+}
+
+.form-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.tracker-card input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #F1FAEE;
+    border-radius: 8px;
+    background: #F1FAEE;
+    margin-top: 5px;
+}
+
+.tracker-card button {
+    grid-column: span 2;
+    background: #1D3557;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#history-list {
+    margin: 20px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+}
+
+.history-item {
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+}
