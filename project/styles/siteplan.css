@@ -275,3 +275,14 @@ fieldset {
     display: flex;
     justify-content: space-between;
 }
+
+#exercise-list {
+    min-height: 400px; /* Evita que la página se encoja al ocultar */
+    transition: all 0.3s ease;
+}
+
+/* Efecto al pasar el ratón por los botones de filtro */
+.filters button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}

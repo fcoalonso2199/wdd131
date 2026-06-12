@@ -1,11 +1,31 @@
 const exercises = [
-    { name: "Press Banca", muscle: "pecho", details: "3 series de 10 reps" },
-    { name: "Aperturas con mancuerna", muscle: "pecho", details: "3 series de 12 reps" },
-    { name: "Sentadilla", muscle: "pierna", details: "4 series de 8 reps" },
-    { name: "Peso Muerto", muscle: "pierna", details: "3 series de 6 reps" },
-    { name: "Remo con barra", muscle: "espalda", details: "3 series de 10 reps" }
+    { name: "Press de Banca", muscle: "pecho", details: "3x10 - Pecho medio" },
+    { name: "Aperturas con mancuerna", muscle: "pecho", details: "3x12 - Apertura total" },
+    { name: "Flexiones (Push-ups)", muscle: "pecho", details: "4x fallo - Calentamiento" },
+    { name: "Sentadilla con barra", muscle: "pierna", details: "4x8 - Cuádriceps" },
+    { name: "Prensa de piernas", muscle: "pierna", details: "3x12 - Enfoque fuerza" },
+    { name: "Curl femoral", muscle: "pierna", details: "3x15 - Isquios" },
+    { name: "Dominadas", muscle: "espalda", details: "3xMax - Espalda alta" },
+    { name: "Remo con barra", muscle: "espalda", details: "4x10 - Espalda media" },
+    { name: "Jalón al pecho", muscle: "espalda", details: "3x12 - Dorsales" },
+    { name: "Curl de bíceps", muscle: "brazo", details: "3x12 - Bíceps" },
+    { name: "Press francés", muscle: "brazo", details: "3x10 - Tríceps" }
 ];
 
+// Función para alternar visibilidad (Creativo & Dinámico)
+function toggleVisibility() {
+    const container = document.querySelector('#exercise-list');
+    const btn = document.querySelector('#toggle-btn');
+    
+    // Cambiamos entre mostrar y ocultar
+    if (container.style.display === "none") {
+        container.style.display = "grid";
+        btn.textContent = "Ocultar Ejercicios";
+    } else {
+        container.style.display = "none";
+        btn.textContent = "Mostrar Ejercicios";
+    }
+}
 function renderExercises(muscleFilter) {
     const container = document.querySelector('#exercise-list');
     const filtered = muscleFilter === 'todos' 
