@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="author" content="Francisco Javier Gonzalez">
@@ -11,31 +11,30 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/siteplan.css">
 </head>
-
+<body>
     <header>
-        <div class="logo">Gym Experts</div>
+        <h1>Gym Experts</h1>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="exercises.html">Exercises</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="library.html">Biblioteca</a></li>
+                <li><a href="tracker.html">Tracker</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section class="hero">
-            <h1>Expert-Led Training</h1>
-            <p>Your intuitive platform for effective and safe fitness routines.</p>
-            <button id="cta-btn">Create My Routine</button>
+        <section class="hero-library">
+            <h2>Biblioteca de Ejercicios</h2>
+            <p>Selecciona un grupo muscular para ver los ejercicios recomendados.</p>
         </section>
 
-        <section id="content-placeholder" aria-label="Exercise library">
-        </section>
+        <section id="exercise-list" class="exercise-grid">
+            </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 Gym Experts | <a href="references.html">References</a></p>
+        <p>&copy; 2026 Gym Experts - Desarrollado para WDD131</p>
     </footer>
 
     <script src="scripts/main.js"></script>
