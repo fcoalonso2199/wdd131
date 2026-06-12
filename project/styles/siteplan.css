@@ -147,3 +147,15 @@ footer {
     border-radius: 20px;
     cursor: pointer;
 }
+
+.btn-delete {
+    background-color: #f1faee;
+    color: #e63946;
+    border: 1px solid #e63946;
+    margin-top: 5px;
+}
+
+.btn-delete:hover {
+    background-color: #e63946;
+    color: white;
+}
