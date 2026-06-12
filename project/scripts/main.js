@@ -20,6 +20,14 @@ function renderExercises(muscleFilter) {
             <button onclick="addToRoutine('${ex.name}')">Añadir a mi rutina</button>
         </div>
     `).join('');
+    // En tu .map de renderExercises:
+    container.innerHTML = filtered.map(ex => `
+       <div class="card">
+        <h3>${ex.name}</h3>
+        <button onclick="addToRoutine('${ex.name}')">Añadir</button>
+        <button class="btn-delete" onclick="removeFromRoutine('${ex.name}')">Quitar</button>
+       </div>
+`).join('');
 }
 
 function addToRoutine(exerciseName) {
@@ -191,6 +199,25 @@ function displayHistory() {
     historyList.innerHTML = lastEntries.map(entry => `
         <p><strong>${entry.date}:</strong> ${entry.name} - ${entry.reps} reps @ ${entry.weight}kg</p>
     `).join('');
+}
+// Borrar un ejercicio específico de la rutina seleccionada
+function removeFromRoutine(exerciseName) {
+    let currentRoutine = JSON.parse(localStorage.getItem('userRoutine')) || [];
+    // Filtramos para quitar el ejercicio que coincide con el nombre
+    currentRoutine = currentRoutine.filter(item => item !== exerciseName);
+    localStorage.setItem('userRoutine', JSON.stringify(currentRoutine));
+    
+    // Refrescamos la vista (esta función depende de dónde estés)
+    if (document.getElementById('my-routine')) displayRoutine();
+    if (document.getElementById('tracker-container')) displayTracker();
+}
+
+// Limpiar todo el historial de entrenamiento
+function clearHistory() {
+    if (confirm("¿Estás seguro de que quieres borrar todo tu historial?")) {
+        localStorage.removeItem('workoutHistory');
+        displayHistory(); // Refrescamos el historial en pantalla
+    }
 }
 
 // Cargar al iniciar
