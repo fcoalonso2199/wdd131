@@ -1,3 +1,16 @@
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Seleccionamos el botón por su ID
+    const ctaBtn = document.getElementById('cta-btn');
+    
+    // Verificamos que el botón exista antes de intentar añadir el evento (por si no estás en index.html)
+    if (ctaBtn) {
+        ctaBtn.addEventListener('click', () => {
+            window.location.href = 'library.html';
+        });
+    }
+});
+
 const exercises = [
     { name: "Press de Banca", muscle: "pecho", details: "3x10 - Pecho medio" },
     { name: "Aperturas con mancuerna", muscle: "pecho", details: "3x12 - Apertura total" },
