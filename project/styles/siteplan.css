@@ -114,6 +114,7 @@ footer {
 .card h3 {
     margin-top: 0;
     color: #1D3557;
+    
 }
 
 .card button {
@@ -279,10 +280,40 @@ fieldset {
 #exercise-list {
     min-height: 400px; /* Evita que la página se encoja al ocultar */
     transition: all 0.3s ease;
+    
 }
 
 /* Efecto al pasar el ratón por los botones de filtro */
 .filters button:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.hero-library {
+    display: flex;
+    flex-direction: column; /* Apila el h2 y el p verticalmente */
+    align-items: center;    /* Centra horizontalmente */
+    justify-content: center; /* Centra verticalmente si el contenedor tiene altura */
+    text-align: center;     /* Asegura que el texto esté centrado dentro del elemento */
+    padding: 40px 0;        /* Añade aire arriba y abajo */
+}
+/* Títulos de sección con estilo profesional */
+h2, h3 {
+    text-align: center; /* Centrado */
+    margin: 40px 0 20px 0; /* Espacio arriba y abajo para separar secciones */
+    color: #1D3557; /* Color principal para mantener consistencia */
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase; /* Opcional: le da un look de App */
+    letter-spacing: 1px;
+}
+
+/* Opcional: línea decorativa debajo del título */
+h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #E63946;
+    margin: 10px auto 0 auto; /* Centrado automático */
+    border-radius: 2px;
 }
