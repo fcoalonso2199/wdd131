@@ -90,3 +90,60 @@ footer {
         margin-top: 15px;
     }
 }
+
+/* Contenedor principal de la cuadrícula */
+.exercise-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Diseño de cada tarjeta */
+.card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border-top: 5px solid #E63946; /* El toque de color */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card h3 {
+    margin-top: 0;
+    color: #1D3557;
+}
+
+.card button {
+    margin-top: 15px;
+    background-color: #1D3557;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.card button:hover {
+    background-color: #E63946;
+}
+
+/* Estilo para los botones de filtro */
+.filters {
+    padding: 20px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.filters button {
+    background: #1D3557;
+    color: #F1FAEE;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+}
