@@ -41,7 +41,7 @@ function toggleVisibility() {
 }
 function renderExercises(muscleFilter) {
     const container = document.querySelector('#exercise-list');
-    const filtered = muscleFilter === 'todos' 
+    const filtered = muscleFilter === 'All' 
         ? exercises 
         : exercises.filter(ex => ex.muscle === muscleFilter);
 
@@ -289,5 +289,5 @@ container.innerHTML = saved.map((exercise, index) => `
 `).join('');
 
 // Cargar al iniciar
-renderExercises('todos');
+renderExercises('All');
 displayRoutine();
