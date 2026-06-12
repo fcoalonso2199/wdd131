@@ -11,20 +11,33 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/siteplan.css">
 </head>
-<body>
-<h1>Gym Experts</h1>
+
+    <header>
+        <div class="logo">Gym Experts</div>
         <nav>
             <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="library.html">Biblioteca</a></li>
-                <li><a href="tracker.html">Tracker</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="exercises.html">Exercises</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
+
     <main>
-        <h2>Bienvenido a tu hub de entrenamiento</h2>
-        <button onclick="window.location.href='library.html'">Crear Rutina</button>
+        <section class="hero">
+            <h1>Expert-Led Training</h1>
+            <p>Your intuitive platform for effective and safe fitness routines.</p>
+            <button id="cta-btn">Create My Routine</button>
+        </section>
+
+        <section id="content-placeholder" aria-label="Exercise library">
+        </section>
     </main>
-    <script src="js/main.js"></script>
+
+    <footer>
+        <p>&copy; 2026 Gym Experts | <a href="references.html">References</a></p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
