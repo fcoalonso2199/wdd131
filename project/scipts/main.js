@@ -1,48 +1,40 @@
 const exercises = [
-    { name: "Bench Press", muscle: "chest", difficulty: "intermediate" },
-    { name: "Tricep Dips", muscle: "triceps", difficulty: "beginner" },
-    { name: "Squats", muscle: "legs", difficulty: "intermediate" },
-    { name: "Push Ups", muscle: "chest", difficulty: "beginner" }
+    { id: 1, name: "Press de Banca", muscle: "pecho", img: "bench.jpg" },
+    { id: 2, name: "Sentadilla", muscle: "pierna", img: "squat.jpg" },
+    { id: 3, name: "Dominadas", muscle: "espalda", img: "pullup.jpg" },
+    { id: 4, name: "Curl de Bíceps", muscle: "brazo", img: "curl.jpg" }
 ];
 
-const mainContent = document.getElementById('content-placeholder');
-const ctaButton = document.getElementById('cta-btn');
-
-function renderExercises(exerciseList) {
-    mainContent.innerHTML = ""; 
+// Función para renderizar ejercicios
+function renderExercises(filter = "todos") {
+    const container = document.querySelector('#exercise-list');
     
-    exerciseList.forEach(ex => {
-        const card = `
-            <div class="exercise-card">
-                <h3>${ex.name}</h3>
-                <p>Target: ${ex.muscle.toUpperCase()}</p>
-                <button onclick="saveRoutine('${ex.name}')">Save to Routine</button>
-            </div>
-        `;
-        mainContent.innerHTML += card;
-    });
+    // Filtramos según el músculo
+    const filtered = filter === "todos" 
+        ? exercises 
+        : exercises.filter(ex => ex.muscle === filter);
+
+    // Usamos plantillas literales para construir el HTML
+    container.innerHTML = filtered.map(ex => `
+        <div class="card" onclick="selectExercise('${ex.name}')">
+            <h3>${ex.name}</h3>
+            <p>Músculo: ${ex.muscle}</p>
+        </div>
+    `).join('');
 }
 
-function saveRoutine(exerciseName) {
-    let savedRoutine = JSON.parse(localStorage.getItem('myRoutine')) || [];
+// Función creativa: Selección con feedback visual (Almacenamiento Local)
+function selectExercise(name) {
+    let saved = JSON.parse(localStorage.getItem('myRoutine')) || [];
     
-    if (!savedRoutine.includes(exerciseName)) {
-        savedRoutine.push(exerciseName);
-        localStorage.setItem('myRoutine', JSON.stringify(savedRoutine));
-        alert(`${exerciseName} added to your routine!`);
+    if (!saved.includes(name)) {
+        saved.push(name);
+        localStorage.setItem('myRoutine', JSON.stringify(saved));
+        alert(`¡${name} añadido a tu rutina!`);
     } else {
-        alert("Exercise already in your routine.");
+        alert("Ya está en tu rutina.");
     }
 }
 
-ctaButton.addEventListener('click', () => {
-    const userGoal = prompt("Do you want to see 'beginner' or 'intermediate' exercises?");
-    
-    const filtered = exercises.filter(ex => ex.difficulty === userGoal);
-    
-    if (filtered.length > 0) {
-        renderExercises(filtered);
-    } else {
-        renderExercises(exercises);
-    }
-});
+// Inicializar al cargar
+renderExercises();
