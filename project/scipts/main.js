@@ -1,39 +1,49 @@
 const exercises = [
-    { id: 1, name: "Press de Banca", muscle: "pecho", img: "bench.jpg" },
-    { id: 2, name: "Sentadilla", muscle: "pierna", img: "squat.jpg" },
-    { id: 3, name: "Dominadas", muscle: "espalda", img: "pullup.jpg" },
-    { id: 4, name: "Curl de Bíceps", muscle: "brazo", img: "curl.jpg" }
+    { name: "Press Banca", muscle: "pecho", details: "3 series de 10 reps" },
+    { name: "Aperturas con mancuerna", muscle: "pecho", details: "3 series de 12 reps" },
+    { name: "Sentadilla", muscle: "pierna", details: "4 series de 8 reps" },
+    { name: "Peso Muerto", muscle: "pierna", details: "3 series de 6 reps" },
+    { name: "Remo con barra", muscle: "espalda", details: "3 series de 10 reps" }
 ];
 
-// Función para renderizar ejercicios
-function renderExercises(filter = "todos") {
+function renderExercises(muscleFilter) {
     const container = document.querySelector('#exercise-list');
-    
-    // Filtramos según el músculo
-    const filtered = filter === "todos" 
+    const filtered = muscleFilter === 'todos' 
         ? exercises 
-        : exercises.filter(ex => ex.muscle === filter);
+        : exercises.filter(ex => ex.muscle === muscleFilter);
 
-    // Usamos plantillas literales para construir el HTML
+    // Creamos las tarjetas con un botón de "Añadir"
     container.innerHTML = filtered.map(ex => `
-        <div class="card" onclick="selectExercise('${ex.name}')">
+        <div class="card">
             <h3>${ex.name}</h3>
-            <p>Músculo: ${ex.muscle}</p>
+            <p>${ex.details}</p>
+            <button onclick="addToRoutine('${ex.name}')">Añadir a mi rutina</button>
         </div>
     `).join('');
 }
 
-// Función creativa: Selección con feedback visual (Almacenamiento Local)
-function selectExercise(name) {
-    // 1. Guardar en localStorage
-    let saved = JSON.parse(localStorage.getItem('myRoutine')) || [];
-    saved.push(name);
-    localStorage.setItem('myRoutine', JSON.stringify(saved));
-
-    // 2. Efecto visual creativo (Modificación del DOM)
-    event.currentTarget.style.border = "3px solid #E63946";
-    event.currentTarget.style.backgroundColor = "#fff0f0";
+function addToRoutine(exerciseName) {
+    // 1. Obtener rutina actual del localStorage
+    let currentRoutine = JSON.parse(localStorage.getItem('userRoutine')) || [];
+    
+    // 2. Evitar duplicados
+    if (!currentRoutine.includes(exerciseName)) {
+        currentRoutine.push(exerciseName);
+        localStorage.setItem('userRoutine', JSON.stringify(currentRoutine));
+        alert(`${exerciseName} añadido a tu rutina.`);
+        displayRoutine(); // Refrescar la vista
+    } else {
+        alert("Ya está en tu rutina.");
+    }
 }
 
-// Inicializar al cargar
-renderExercises();
+function displayRoutine() {
+    const list = document.querySelector('#my-routine');
+    const saved = JSON.parse(localStorage.getItem('userRoutine')) || [];
+    
+    list.innerHTML = saved.map(item => `<li>${item}</li>`).join('');
+}
+
+// Cargar al iniciar
+renderExercises('todos');
+displayRoutine();

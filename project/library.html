@@ -28,14 +28,18 @@
             <h2>Biblioteca de Ejercicios</h2>
             <p>Selecciona un grupo muscular para ver los ejercicios recomendados.</p>
         </section>
-            <div class="filters">
-            <button onclick="renderExercises('todos')">Todos</button>
-            <button onclick="renderExercises('pecho')">Pecho</button>
-            <button onclick="renderExercises('pierna')">Pierna</button>
-            <button onclick="renderExercises('espalda')">Espalda</button>
-            </div>
-        <section id="exercise-list" class="exercise-grid">
-            </section>
+           <div class="filters">
+             <button onclick="renderExercises('pecho')">Pecho</button>
+             <button onclick="renderExercises('pierna')">Pierna</button>
+             <button onclick="renderExercises('espalda')">Espalda</button>
+             <button onclick="renderExercises('todos')">Todos</button>
+           </div>
+
+<h3>Lista de Ejercicios</h3>
+<section id="exercise-list" class="exercise-grid"></section>
+
+<h3>Tu Rutina Actual</h3>
+<ul id="my-routine"></ul>
     </main>
 
     <footer>
