@@ -12,17 +12,17 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 const exercises = [
-    { name: "Press de Banca", muscle: "pecho", details: "3x10 - Pecho medio" },
-    { name: "Aperturas con mancuerna", muscle: "pecho", details: "3x12 - Apertura total" },
-    { name: "Flexiones (Push-ups)", muscle: "pecho", details: "4x fallo - Calentamiento" },
-    { name: "Sentadilla con barra", muscle: "pierna", details: "4x8 - Cuádriceps" },
-    { name: "Prensa de piernas", muscle: "pierna", details: "3x12 - Enfoque fuerza" },
-    { name: "Curl femoral", muscle: "pierna", details: "3x15 - Isquios" },
-    { name: "Dominadas", muscle: "espalda", details: "3xMax - Espalda alta" },
-    { name: "Remo con barra", muscle: "espalda", details: "4x10 - Espalda media" },
-    { name: "Jalón al pecho", muscle: "espalda", details: "3x12 - Dorsales" },
-    { name: "Curl de bíceps", muscle: "brazo", details: "3x12 - Bíceps" },
-    { name: "Press francés", muscle: "brazo", details: "3x10 - Tríceps" }
+    { name: "Brench Press", muscle: "Chest", details: "3x10 - Middle chest" },
+    { name: "Dumbbell Flyes", muscle: "Chest", details: "3x12 - Full range of motion" },
+    { name: "Flat Push-ups", muscle: "Chest", details: "4x failure - Warm-up" },
+    { name: "Barbell squat", muscle: "Legs", details: "4x8 - Quadriceps" },
+    { name: "Leg Press", muscle: "Legs", details: "3x12 - Strength focus" },
+    { name: "Leg Curl", muscle: "Legs", details: "3x15 - Hamstrings" },
+    { name: "Deadlift", muscle: "Back", details: "3xMax - Back focus" },
+    { name: "Pull-up", muscle: "Back", details: "4x10 - Back middle" },
+    { name: "Pulldown", muscle: "Back", details: "3x12 - Back wide" },
+    { name: "Bicep Curl", muscle: "Arm", details: "3x12 - Biceps" },
+    { name: "Tricep Pushdown", muscle: "Arm", details: "3x10 - Triceps" }
 ];
 
 // Función para alternar visibilidad (Creativo & Dinámico)
@@ -33,10 +33,10 @@ function toggleVisibility() {
     // Cambiamos entre mostrar y ocultar
     if (container.style.display === "none") {
         container.style.display = "grid";
-        btn.textContent = "Ocultar Ejercicios";
+        btn.textContent = "Hide Exercises";
     } else {
         container.style.display = "none";
-        btn.textContent = "Mostrar Ejercicios";
+        btn.textContent = "Show Exercises";
     }
 }
 function renderExercises(muscleFilter) {
@@ -50,15 +50,15 @@ function renderExercises(muscleFilter) {
         <div class="card">
             <h3>${ex.name}</h3>
             <p>${ex.details}</p>
-            <button onclick="addToRoutine('${ex.name}')">Añadir a mi rutina</button>
+            <button onclick="addToRoutine('${ex.name}')">Add to My Routine</button>
         </div>
     `).join('');
     // En tu .map de renderExercises:
     container.innerHTML = filtered.map(ex => `
        <div class="card">
         <h3>${ex.name}</h3>
-        <button onclick="addToRoutine('${ex.name}')">Añadir</button>
-        <button class="btn-delete" onclick="removeFromRoutine('${ex.name}')">Quitar</button>
+        <button onclick="addToRoutine('${ex.name}')">Add</button>
+        <button class="btn-delete" onclick="removeFromRoutine('${ex.name}')">Remove</button>
        </div>
 `).join('');
 }
@@ -71,10 +71,10 @@ function addToRoutine(exerciseName) {
     if (!currentRoutine.includes(exerciseName)) {
         currentRoutine.push(exerciseName);
         localStorage.setItem('userRoutine', JSON.stringify(currentRoutine));
-        alert(`${exerciseName} añadido a tu rutina.`);
-        displayRoutine(); // Refrescar la vista
+        alert(`${exerciseName} added to your routine.`);
+        displayRoutine(); // Refresh the view
     } else {
-        alert("Ya está en tu rutina.");
+        alert("Already in your routine.");
     }
 }
 
@@ -89,7 +89,7 @@ function displayTracker() {
     const saved = JSON.parse(localStorage.getItem('userRoutine')) || [];
 
     if (saved.length === 0) {
-        container.innerHTML = "<p>Aún no has añadido ejercicios. ¡Ve a la biblioteca!</p>";
+        container.innerHTML = "<p>You haven't added any exercises yet. <a href='library.html'>Add some first</a>.</p>";
         return;
     }
 
@@ -97,9 +97,9 @@ function displayTracker() {
     container.innerHTML = saved.map((exercise, index) => `
         <div class="tracker-card">
             <h3>${exercise}</h3>
-            <label>Reps: <input type="number" id="reps-${index}" placeholder="Ej: 10"></label>
-            <label>Peso (kg): <input type="number" id="weight-${index}" placeholder="Ej: 20"></label>
-            <button onclick="saveProgress(${index}, '${exercise}')">Guardar Sesión</button>
+            <label>Reps: <input type="number" id="reps-${index}" placeholder="e.g., 10"></label>
+            <label>Weight (kg): <input type="number" id="weight-${index}" placeholder="e.g., 20"></label>
+            <button onclick="saveProgress(${index}, '${exercise}')">Save Session</button>
         </div>
     `).join('');
 }
@@ -116,7 +116,7 @@ function saveProgress(index, name) {
     history.push(progress);
     localStorage.setItem('workoutHistory', JSON.stringify(history));
 
-    alert(`Progreso guardado para ${name}: ${reps} reps con ${weight}kg`);
+    alert(`Progress saved for ${name}: ${reps} reps with ${weight}kg`);
 }
 
 function clearRoutine() {
@@ -129,7 +129,7 @@ function displayTracker() {
     const saved = JSON.parse(localStorage.getItem('userRoutine')) || [];
 
     if (saved.length === 0) {
-        container.innerHTML = "<p>No tienes ejercicios en tu rutina. <a href='library.html'>Añade algunos primero</a>.</p>";
+        container.innerHTML = "<p>You don't have any exercises in your routine. <a href='library.html'>Add some first</a>.</p>";
         return;
     }
 
@@ -138,10 +138,10 @@ function displayTracker() {
             <h3>${exercise}</h3>
             <form onsubmit="saveProgress(event, '${exercise}')">
                 <fieldset>
-                    <legend>Registrar Serie</legend>
+                    <legend>Register Set</legend>
                     <label>Reps: <input type="number" id="reps-${index}" required min="1"></label>
-                    <label>Peso (kg): <input type="number" id="weight-${index}" required min="0"></label>
-                    <button type="submit">Guardar</button>
+                    <label>Weight (kg): <input type="number" id="weight-${index}" required min="0"></label>
+                    <button type="submit">Save</button>
                 </fieldset>
             </form>
         </div>
@@ -162,8 +162,8 @@ function saveProgress(event, name) {
     history.push(progressEntry);
     localStorage.setItem('workoutHistory', JSON.stringify(history));
 
-    alert(`¡Progreso registrado para ${name}!`);
-    displayHistory(); // Actualizar historial en pantalla
+    alert(`Progress registered for ${name}!`);
+    displayHistory(); // Update history on screen
 }
 
 // Mostrar historial usando métodos de array (slice y reverse)
@@ -184,7 +184,7 @@ function displayTracker() {
     const saved = JSON.parse(localStorage.getItem('userRoutine')) || [];
 
     if (saved.length === 0) {
-        container.innerHTML = "<p>No tienes ejercicios en tu rutina. <a href='library.html'>Añade algunos primero</a>.</p>";
+        container.innerHTML = "<p>You don't have any exercises in your routine. <a href='library.html'>Add some first</a>.</p>";
         return;
     }
 
@@ -193,10 +193,10 @@ function displayTracker() {
             <h3>${exercise}</h3>
             <form onsubmit="saveProgress(event, '${exercise}')">
                 <fieldset>
-                    <legend>Registrar Serie</legend>
+                    <legend>Register Set</legend>
                     <label>Reps: <input type="number" id="reps-${index}" required min="1"></label>
-                    <label>Peso (kg): <input type="number" id="weight-${index}" required min="0"></label>
-                    <button type="submit">Guardar</button>
+                    <label>Weight (kg): <input type="number" id="weight-${index}" required min="0"></label>
+                    <button type="submit">Save</button>
                 </fieldset>
             </form>
         </div>
@@ -217,8 +217,8 @@ function saveProgress(event, name) {
     history.push(progressEntry);
     localStorage.setItem('workoutHistory', JSON.stringify(history));
 
-    alert(`¡Progreso registrado para ${name}!`);
-    displayHistory(); // Actualizar historial en pantalla
+    alert(`Progress registered for ${name}!`);
+    displayHistory(); // Update history on screen
 }
 
 // Mostrar historial usando métodos de array (slice y reverse)
@@ -247,7 +247,7 @@ function removeFromRoutine(exerciseName) {
 
 // Limpiar todo el historial de entrenamiento
 function clearHistory() {
-    if (confirm("¿Estás seguro de que quieres borrar todo tu historial?")) {
+    if (confirm("Are you sure you want to clear your entire workout history?")) {
         localStorage.removeItem('workoutHistory');
         displayHistory(); // Refrescamos el historial en pantalla
     }
@@ -260,7 +260,7 @@ function displayHistory() {
     historyList.innerHTML = history.reverse().map((entry, index) => `
         <div class="history-item">
             <p>${entry.date}: ${entry.name} - ${entry.reps} reps @ ${entry.weight}kg</p>
-            <button onclick="deleteEntry(${index})">Eliminar registro</button>
+            <button onclick="deleteEntry(${index})">Delete Entry</button>
         </div>
     `).join('');
 }
@@ -280,9 +280,9 @@ container.innerHTML = saved.map((exercise, index) => `
             <fieldset>
                 <div class="form-group">
                     <label>Reps: <input type="number" id="reps-${index}" required></label>
-                    <label>Peso (kg): <input type="number" id="weight-${index}" required></label>
+                    <label>Weight (kg): <input type="number" id="weight-${index}" required></label>
                 </div>
-                <button type="submit">Guardar Registro</button>
+                <button type="submit">Save Record</button>
             </fieldset>
         </form>
     </div>

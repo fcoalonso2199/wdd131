@@ -17,7 +17,7 @@
         <nav>
             <ul>
                 <li><a href="siteplan.html">Inicio</a></li>
-                <li><a href="project/library.html">Biblioteca</a></li>
+                <li><a href="library.html">Biblioteca</a></li>
                 <li><a href="follow.html">Tracker</a></li>
             </ul>
         </nav>
@@ -25,21 +25,21 @@
 
     <main>
         <section class="hero-library">
-            <h2>Biblioteca de Ejercicios</h2>
-            <p>Selecciona un grupo muscular para ver los ejercicios recomendados.</p>
+            <h2>Exercise Library</h2>
+            <p>Select a muscle group to view recommended exercises.</p>
         </section>
            <div class="filters">
-             <button onclick="renderExercises('pecho')">Pecho</button>
-             <button onclick="renderExercises('pierna')">Pierna</button>
-             <button onclick="renderExercises('espalda')">Espalda</button>
-             <button onclick="renderExercises('brazo')">Brazo</button>
-             <button onclick="renderExercises('todos')">Todos</button>
-             <button id="toggle-btn" onclick="toggleVisibility()" style="background: #E63946;">Ocultar Ejercicios</button>
+             <button onclick="renderExercises('Chest')">Chest</button>
+             <button onclick="renderExercises('Leg')">Leg</button>
+             <button onclick="renderExercises('Back')">Back</button>
+             <button onclick="renderExercises('Arm')">Arm</button>
+             <button onclick="renderExercises('All')">All</button>
+             <button id="toggle-btn" onclick="toggleVisibility()" style="background: #E63946;">Hide Exercises</button>
          </div>
-<h3>Lista de Ejercicios</h3>
+<h3>Exercise List</h3>
 <section id="exercise-list" class="exercise-grid"></section>
 
-<h3>Tu Rutina Actual</h3>
+<h3>Your Current Routine</h3>
 <ul id="my-routine"></ul>
     </main>
 
