@@ -1,4 +1,3 @@
-// --- DATOS ---
 const exercises = [
     { name: "Brench Press", muscle: "Chest", details: "3x10 - Middle chest" },
     { name: "Dumbbell Flyes", muscle: "Chest", details: "3x12 - Full range of motion" },
@@ -7,7 +6,6 @@ const exercises = [
     { name: "Bicep Curl", muscle: "Arm", details: "3x12 - Biceps" }
 ];
 
-// --- FUNCIONES DE LIBRERÍA ---
 function renderExercises(muscleFilter) {
     const container = document.querySelector('#exercise-list');
     if (!container) return;
@@ -51,7 +49,6 @@ function displayRoutine() {
     `).join('');
 }
 
-// --- FUNCIONES DE TRACKER ---
 function displayTracker() {
     const container = document.querySelector('#tracker-container');
     if (!container) return;
@@ -109,13 +106,10 @@ function deleteEntry(index) {
     displayHistory();
 }
 
-// --- INICIALIZACIÓN ---
 document.addEventListener('DOMContentLoaded', () => {
-    // Inicializar lógica de botones de navegación
     const ctaBtn = document.getElementById('cta-btn');
     if (ctaBtn) ctaBtn.addEventListener('click', () => window.location.href = 'library.html');
 
-    // Inicializar vistas dependiendo de la página
     if (document.getElementById('exercise-list')) renderExercises('All');
     if (document.getElementById('my-routine')) displayRoutine();
     if (document.getElementById('tracker-container')) {
@@ -124,7 +118,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Función para ocultar/mostrar ejercicios
 function toggleVisibility() {
     const container = document.querySelector('#exercise-list');
     const btn = document.querySelector('#toggle-btn');

@@ -91,7 +91,6 @@ footer {
     }
 }
 
-/* Contenedor principal de la cuadrícula */
 .exercise-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -99,7 +98,6 @@ footer {
     padding: 20px;
 }
 
-/* Diseño de cada tarjeta */
 .card {
     background: #ffffff;
     border-radius: 12px;
@@ -131,7 +129,6 @@ footer {
     background-color: #E63946;
 }
 
-/* Estilo para los botones de filtro */
 .filters {
     padding: 20px;
     display: flex;
@@ -160,7 +157,6 @@ footer {
     color: white;
 }
 
-/* FUSIONADO: Tarjeta del Tracker (versión única y definitiva) */
 .tracker-card {
     background: #ffffff;
     padding: 25px;
@@ -170,7 +166,6 @@ footer {
     border-left: 8px solid #E63946;
 }
 
-/* FUSIONADO: Fieldset (versión única y definitiva) */
 fieldset {
     border: none;
     padding: 0;
@@ -184,7 +179,6 @@ legend {
     padding: 0 10px;
 }
 
-/* Alineación de los inputs */
 .tracker-card form {
     display: flex;
     flex-wrap: wrap;
@@ -223,7 +217,6 @@ legend {
     margin-top: 10px;
 }
 
-/* Contenedor principal del tracker */
 #tracker-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -231,7 +224,6 @@ legend {
     padding: 20px;
 }
 
-/* Estilo para el historial */
 #history-list {
     margin: 20px;
     padding: 20px;
@@ -251,7 +243,6 @@ legend {
     transition: all 0.3s ease;
 }
 
-/* Efecto al pasar el ratón por los botones de filtro */
 .filters button:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
@@ -266,7 +257,6 @@ legend {
     padding: 40px 0;
 }
 
-/* Títulos de sección con estilo profesional */
 h2, h3 {
     text-align: center;
     margin: 40px 0 20px 0;
@@ -276,7 +266,6 @@ h2, h3 {
     letter-spacing: 1px;
 }
 
-/* Línea decorativa debajo del título */
 h2::after {
     content: "";
     display: block;
