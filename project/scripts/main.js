@@ -68,7 +68,7 @@ function displayTracker() {
             <form onsubmit="saveProgress(event, '${exercise}', ${index})">
                 <fieldset>
                     <label>Reps: <input type="number" id="reps-${index}" required min="1"></label>
-                    <label>Weight: <input type="number" id="weight-${index}" required min="0"></label>
+                    <label>Weight (Kg): <input type="number" id="weight-${index}" required min="0"></label>
                     <button type="submit">Save Session</button>
                 </fieldset>
             </form>

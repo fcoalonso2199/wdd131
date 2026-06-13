@@ -105,7 +105,7 @@ footer {
     border-radius: 12px;
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    border-top: 5px solid #E63946; /* El toque de color */
+    border-top: 5px solid #E63946;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -114,7 +114,6 @@ footer {
 .card h3 {
     margin-top: 0;
     color: #1D3557;
-    
 }
 
 .card button {
@@ -161,22 +160,21 @@ footer {
     color: white;
 }
 
-/* Contenedor de las tarjetas de ejercicio en el Tracker */
+/* FUSIONADO: Tarjeta del Tracker (versión única y definitiva) */
 .tracker-card {
-    background: #fff;
-    padding: 20px;
+    background: #ffffff;
+    padding: 25px;
     margin: 20px 0;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    border-left: 5px solid #E63946; /* Toque de color lateral */
+    border-radius: 16px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    border-left: 8px solid #E63946;
 }
 
-/* Mejora del Fieldset para que parezca una sección separada */
+/* FUSIONADO: Fieldset (versión única y definitiva) */
 fieldset {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 15px;
-    margin-top: 10px;
+    border: none;
+    padding: 0;
+    margin: 15px 0 0 0;
     background: #fdfdfd;
 }
 
@@ -196,44 +194,6 @@ legend {
 
 .tracker-card label {
     font-weight: 600;
-}
-
-.tracker-card input {
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    width: 80px;
-}
-
-/* Estilo para el historial */
-#history-list {
-    background: #fff;
-    padding: 20px;
-    border-radius: 12px;
-}
-
-/* Mejora el contenedor principal */
-#tracker-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    padding: 20px;
-}
-
-/* Estilo mejorado para la tarjeta del tracker */
-.tracker-card {
-    background: #ffffff;
-    padding: 25px;
-    border-radius: 16px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-    border-left: 8px solid #E63946;
-}
-
-/* Mejora los inputs y etiquetas dentro del fieldset */
-fieldset {
-    border: none;
-    padding: 0;
-    margin: 15px 0 0 0;
 }
 
 .form-group {
@@ -263,6 +223,15 @@ fieldset {
     margin-top: 10px;
 }
 
+/* Contenedor principal del tracker */
+#tracker-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Estilo para el historial */
 #history-list {
     margin: 20px;
     padding: 20px;
@@ -278,9 +247,8 @@ fieldset {
 }
 
 #exercise-list {
-    min-height: 400px; /* Evita que la página se encoja al ocultar */
+    min-height: 400px;
     transition: all 0.3s ease;
-    
 }
 
 /* Efecto al pasar el ratón por los botones de filtro */
@@ -291,29 +259,30 @@ fieldset {
 
 .hero-library {
     display: flex;
-    flex-direction: column; /* Apila el h2 y el p verticalmente */
-    align-items: center;    /* Centra horizontalmente */
-    justify-content: center; /* Centra verticalmente si el contenedor tiene altura */
-    text-align: center;     /* Asegura que el texto esté centrado dentro del elemento */
-    padding: 40px 0;        /* Añade aire arriba y abajo */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 0;
 }
+
 /* Títulos de sección con estilo profesional */
 h2, h3 {
-    text-align: center; /* Centrado */
-    margin: 40px 0 20px 0; /* Espacio arriba y abajo para separar secciones */
-    color: #1D3557; /* Color principal para mantener consistencia */
+    text-align: center;
+    margin: 40px 0 20px 0;
+    color: #1D3557;
     font-family: 'Montserrat', sans-serif;
-    text-transform: uppercase; /* Opcional: le da un look de App */
+    text-transform: uppercase;
     letter-spacing: 1px;
 }
 
-/* Opcional: línea decorativa debajo del título */
+/* Línea decorativa debajo del título */
 h2::after {
     content: "";
     display: block;
     width: 60px;
     height: 4px;
     background-color: #E63946;
-    margin: 10px auto 0 auto; /* Centrado automático */
+    margin: 10px auto 0 auto;
     border-radius: 2px;
 }
